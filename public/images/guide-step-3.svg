@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" class="w-full h-full">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF4444;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="200" fill="url(#bg3)"/>
+  
+  <!-- Desktop Monitor -->
+  <rect x="50" y="40" width="200" height="120" rx="8" fill="#1F2937"/>
+  <rect x="60" y="50" width="180" height="100" rx="4" fill="#F9FAFB"/>
+  
+  <!-- Dashboard Grid -->
+  <!-- Top Cards -->
+  <rect x="70" y="60" width="40" height="25" rx="4" fill="#E5E7EB"/>
+  <rect x="115" y="60" width="40" height="25" rx="4" fill="#E5E7EB"/>
+  <rect x="160" y="60" width="40" height="25" rx="4" fill="#E5E7EB"/>
+  <rect x="205" y="60" width="25" height="25" rx="4" fill="#F97316"/>
+  
+  <!-- Chart Area -->
+  <rect x="70" y="90" width="85" height="50" rx="4" fill="#E5E7EB"/>
+  <!-- Chart Line -->
+  <polyline points="75,125 85,115 95,120 105,110 115,115 125,105 135,110 145,100" 
+            stroke="#F97316" stroke-width="2" fill="none"/>
+  
+  <!-- Progress Circle -->
+  <circle cx="185" cy="115" r="20" fill="#E5E7EB"/>
+  <circle cx="185" cy="115" r="15" fill="none" stroke="#F97316" stroke-width="4" 
+          stroke-dasharray="60 20" stroke-linecap="round"/>
+  
+  <!-- Bottom Stats -->
+  <rect x="70" y="125" width="25" height="15" rx="2" fill="#10B981"/>
+  <rect x="100" y="125" width="25" height="15" rx="2" fill="#3B82F6"/>
+  <rect x="130" y="125" width="25" height="15" rx="2" fill="#8B5CF6"/>
+  
+  <!-- Icons -->
+  <!-- Weight Icon -->
+  <circle cx="80" cy="67" r="3" fill="#F97316"/>
+  <rect x="78" y="70" width="4" height="8" fill="#F97316"/>
+  
+  <!-- Water Icon -->
+  <path d="M125 65 Q125 62 127 65 Q129 62 129 65 Q129 68 127 70 Q125 68 125 65" fill="#3B82F6"/>
+  
+  <!-- Activity Icon -->
+  <circle cx="170" cy="67" r="2" fill="#10B981"/>
+  <path d="M167 70 L170 65 L173 70" stroke="#10B981" stroke-width="1" fill="none"/>
+  
+  <!-- Monitor Stand -->
+  <rect x="140" y="160" width="20" height="8" fill="#374151"/>
+  <rect x="120" y="168" width="60" height="4" rx="2" fill="#374151"/>
+</svg>
