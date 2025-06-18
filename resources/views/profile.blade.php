@@ -88,7 +88,7 @@
                         <!-- Enhanced Tab Navigation -->
                         <div class="border-b border-gray-200/50 bg-white/50 px-6 py-4">
                             <div class="flex space-x-1">
-                                @foreach (['profile' => ['label' => 'Profil', 'icon' => 'user'], 'recommendations' => ['label' => 'Rekomendasi', 'icon' => 'heart'], 'progress' => ['label' => 'Progres', 'icon' => 'trending-up']] as $tab => $data)
+                                @foreach (['profile' => ['label' => 'Profil', 'icon' => 'user'], 'progress' => ['label' => 'Progres', 'icon' => 'trending-up']] as $tab => $data)
                                     <a href="{{ route('profile.index', ['tab' => $tab]) }}"
                                         class="px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 {{ ($activeTab ?? 'profile') === $tab ? 'bg-gradient-to-r from-orange-500 to-purple-600 text-white shadow-lg' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800' }}">
                                         <i data-lucide="{{ $data['icon'] }}" class="w-4 h-4"></i>
@@ -162,9 +162,8 @@
                                                     <select name="gender" id="gender" 
                                                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
                                                         <option value="">Pilih jenis kelamin</option>
-                                                        <option value="male" {{ old('gender', Auth::user()->questionnaire->gender ?? '') == 'male' ? 'selected' : '' }}>Laki-laki</option>
-                                                        <option value="female" {{ old('gender', Auth::user()->questionnaire->gender ?? '') == 'female' ? 'selected' : '' }}>Perempuan</option>
-                                                        <option value="other" {{ old('gender', Auth::user()->questionnaire->gender ?? '') == 'other' ? 'selected' : '' }}>Lainnya</option>
+                                                        <option value="pria" {{ old('gender', Auth::user()->questionnaire->gender ?? '') == 'pria' ? 'selected' : '' }}>Laki-laki</option>
+                                                        <option value="wanita" {{ old('gender', Auth::user()->questionnaire->gender ?? '') == 'wanita' ? 'selected' : '' }}>Perempuan</option>
                                                     </select>
                                                     @error('gender')
                                                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -190,10 +189,10 @@
                                                     @enderror
                                                 </div>
                                                 <div>
-                                                    <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Berat Badan Saat Ini (kg)</label>
+                                                    <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Berat Badan Awal (kg)</label>
                                                     <input type="number" name="weight" id="weight" value="{{ old('weight', Auth::user()->questionnaire->weight ?? '') }}" 
                                                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors" 
-                                                        min="30" max="200" step="0.1">
+                                                        min="30" max="200" step="0.1" disabled>
                                                     @error('weight')
                                                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                                                     @enderror
@@ -213,9 +212,7 @@
                                                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors">
                                                         <option value="">Pilih tingkat aktivitas</option>
                                                         <option value="sedentary" {{ old('activity_level', Auth::user()->questionnaire->activity_level ?? '') == 'sedentary' ? 'selected' : '' }}>Sangat Rendah (Duduk/tidak berolahraga)</option>
-                                                        <option value="lightly_active" {{ old('activity_level', Auth::user()->questionnaire->activity_level ?? '') == 'lightly_active' ? 'selected' : '' }}>Ringan (Olahraga ringan 1-3x/minggu)</option>
                                                         <option value="moderately_active" {{ old('activity_level', Auth::user()->questionnaire->activity_level ?? '') == 'moderately_active' ? 'selected' : '' }}>Sedang (Olahraga 3-5x/minggu)</option>
-                                                        <option value="very_active" {{ old('activity_level', Auth::user()->questionnaire->activity_level ?? '') == 'very_active' ? 'selected' : '' }}>Tinggi (Olahraga 6-7x/minggu)</option>
                                                         <option value="extra_active" {{ old('activity_level', Auth::user()->questionnaire->activity_level ?? '') == 'extra_active' ? 'selected' : '' }}>Sangat Tinggi (Olahraga 2x/hari)</option>
                                                     </select>
                                                     @error('activity_level')
@@ -236,10 +233,9 @@
                                                 <select name="goal" id="goal" 
                                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors">
                                                     <option value="">Pilih tujuan kesehatan</option>
-                                                    <option value="Weight loss" {{ old('goal', Auth::user()->questionnaire->goal ?? '') == 'Weight loss' ? 'selected' : '' }}>Menurunkan Berat Badan</option>
-                                                    <option value="Muscle gain" {{ old('goal', Auth::user()->questionnaire->goal ?? '') == 'Muscle gain' ? 'selected' : '' }}>Menambah Massa Otot</option>
-                                                    <option value="Maintain weight" {{ old('goal', Auth::user()->questionnaire->goal ?? '') == 'Maintain weight' ? 'selected' : '' }}>Mempertahankan Berat Badan</option>
-                                                    <option value="Improve fitness" {{ old('goal', Auth::user()->questionnaire->goal ?? '') == 'Improve fitness' ? 'selected' : '' }}>Meningkatkan Kebugaran</option>
+                                                    <option value="weight_loss" {{ old('goal', Auth::user()->questionnaire->goal ?? '') == 'weight_loss' ? 'selected' : '' }}>Menurunkan Berat Badan</option>
+                                                    <option value="muscle_gain" {{ old('goal', Auth::user()->questionnaire->goal ?? '') == 'muscle_gain' ? 'selected' : '' }}>Menambah Massa Otot</option>
+                                                    <option value="maintain_weight" {{ old('goal', Auth::user()->questionnaire->goal ?? '') == 'maintain_weight' ? 'selected' : '' }}>Mempertahankan Berat Badan</option>
                                                 </select>
                                                 @error('goal')
                                                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -258,7 +254,7 @@
                                     </form>
                                 </div>
 
-                            @elseif ($activeTab === 'recommendations')
+                            <!-- @elseif ($activeTab === 'recommendations') -->
                                 <!-- <div>
                                     <div class="flex items-center mb-6">
                                         <div class="w-12 h-12 bg-gradient-to-r from-pink-400 to-red-500 rounded-xl flex items-center justify-center mr-4">
