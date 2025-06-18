@@ -399,7 +399,7 @@
                 </div>
 
                 <!-- Enhanced User Information Card / Profil Kesehatan -->
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                <!-- <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
                     <div class="bg-gradient-to-r from-orange-500 to-red-500 p-4">
                         <div class="flex items-center text-white">
                             <i data-lucide="user-circle" class="w-6 h-6 mr-2"></i>
@@ -407,9 +407,9 @@
                         </div>
                     </div>
 
-                    <div class="p-6 space-y-6">
+                    <div class="p-6 space-y-6"> -->
                         <!-- Program Recommendation -->
-                        <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 border border-orange-100">
+                        <!-- <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 border border-orange-100">
                             <div class="flex items-start space-x-3">
                                 <div
                                     class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -427,10 +427,10 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- BMI Section -->
-                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
+                        <!-- <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
                             <div class="flex items-start space-x-3">
                                 <div
                                     class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -467,7 +467,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- Right Column - Progress Harian, Rekomendasi Olahraga, Metrik Kesehatan, Artikel Terbaru -->
             <div class="space-y-6">
@@ -699,7 +699,7 @@
                     </div>
                 @endif
 
-                <!-- Health Metrics Card -->setelah saya
+                <!-- Health Metrics Card -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-4">
                         <div class="flex items-center text-white">

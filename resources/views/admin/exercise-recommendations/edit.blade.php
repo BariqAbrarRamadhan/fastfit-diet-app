@@ -126,9 +126,9 @@
                                         <option value="">Pilih tingkat</option>
                                         @php
                                             $activityLevels = [
-                                                'low' => 'Rendah',
-                                                'moderate' => 'Sedang',
-                                                'high' => 'Tinggi'
+                                                'sedentary' => 'Sangat Rendah',
+                                                'moderately_active' => 'Sedang',
+                                                'extra_active' => 'Sangat Tinggi'
                                             ];
                                         @endphp
                                         @foreach($activityLevels as $key => $value)

@@ -55,13 +55,13 @@
                                             <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
                                                 <path class="text-gray-200" stroke="currentColor" stroke-width="2" fill="none"
                                                     d="M18 2.0845
-                                                                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                                                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                                                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
                                                 <path stroke="url(#progressGradient)" stroke-width="3" fill="none"
                                                     stroke-dasharray="{{ ($currentStep / $totalSteps) * 100 }}, 100"
                                                     stroke-linecap="round" d="M18 2.0845
-                                                                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                                                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                                                                            a 15.9155 15.9155 0 0 1 0 -31.831"
                                                     class="progress-circle" />
                                                 <defs>
                                                     <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -269,7 +269,7 @@
                                     <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
                                         @if ($currentStep > 1)
                                             <button type="button" onclick="goBack()"
-                                                class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center">
+                                                class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center cursor-pointer">
                                                 <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
                                                 Kembali
                                             </button>
@@ -367,7 +367,7 @@
                                 <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
                                     @if ($currentStep > 1)
                                         <button type="button" onclick="goBack()"
-                                            class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center">
+                                            class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center cursor-pointer">
                                             <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
                                             Kembali
                                         </button>
@@ -425,7 +425,7 @@
                                     <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
                                         @if ($currentStep > 1)
                                             <button type="button" onclick="goBack()"
-                                                class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center">
+                                                class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center cursor-pointer">
                                                 <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
                                                 Kembali
                                             </button>
@@ -596,7 +596,7 @@
                                 <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
                                     @if ($currentStep > 1)
                                         <button type="button" onclick="goBack()"
-                                            class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center">
+                                            class="px-8 py-4 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-medium flex items-center cursor-pointer">
                                             <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
                                             Kembali
                                         </button>
@@ -967,12 +967,12 @@
                 const typeDiv = document.createElement('div');
                 typeDiv.className = 'flex items-start space-x-2 text-green-800';
                 typeDiv.innerHTML = `
-                            <i data-lucide="check-circle" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
-                            <div>
-                                <span class="font-semibold">${type}:</span>
-                                <span class="ml-1">${description}</span>
-                            </div>
-                        `;
+                                <i data-lucide="check-circle" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold">${type}:</span>
+                                    <span class="ml-1">${description}</span>
+                                </div>
+                            `;
                 typesContainer.appendChild(typeDiv);
             });
 
@@ -983,14 +983,15 @@
                 const symptomDiv = document.createElement('div');
                 symptomDiv.className = 'flex items-center space-x-2 text-yellow-800 text-sm';
                 symptomDiv.innerHTML = `
-                            <i data-lucide="circle" class="w-3 h-3 fill-current"></i>
-                            <span>${symptom}</span>
-                        `;
+                                <i data-lucide="circle" class="w-3 h-3 fill-current"></i>
+                                <span>${symptom}</span>
+                            `;
                 symptomsContainer.appendChild(symptomDiv);
             });
 
-            // Show modal
-            modal.classList.remove('hidden');
+            // Show modal with transition
+            modal.classList.remove('opacity-0', 'invisible');
+            modal.classList.add('opacity-100', 'visible');
             document.body.style.overflow = 'hidden';
 
             // Reinitialize Lucide icons
@@ -1006,7 +1007,8 @@
 
         function closeDiseaseModal() {
             const modal = document.getElementById('diseaseModal');
-            modal.classList.add('hidden');
+            modal.classList.add('opacity-0', 'invisible');
+            modal.classList.remove('opacity-100', 'visible');
             document.body.style.overflow = 'auto';
         }
 

@@ -82,10 +82,9 @@ class ExerciseRecommendation extends Model
     public static function getGoals()
     {
         return [
-            'Weight loss' => 'Penurunan Berat Badan',
-            'Muscle gain' => 'Meningkatkan Massa Otot',
-            'Maintain weight' => 'Menjaga Berat Badan',
-            'Improve fitness' => 'Meningkatkan Kebugaran',
+            'weight_loss' => 'Penurunan Berat Badan',
+            'muscle_gain' => 'Meningkatkan Massa Otot',
+            'maintain_weight' => 'Menjaga Berat Badan',
         ];
     }
 
@@ -93,9 +92,7 @@ class ExerciseRecommendation extends Model
     {
         return [
             'sedentary' => 'Sangat Rendah',
-            'lightly_active' => 'Ringan',
             'moderately_active' => 'Sedang',
-            'very_active' => 'Tinggi',
             'extra_active' => 'Ekstra Tinggi',
         ];
     }
