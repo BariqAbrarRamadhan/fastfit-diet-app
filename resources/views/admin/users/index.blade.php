@@ -99,13 +99,13 @@
                         <tr class="user-row hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-12 w-12 relative">
+                                    <!-- <div class="flex-shrink-0 h-12 w-12 relative">
                                         <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-orange-400 to-purple-500 p-0.5">
                                             <img src="{{ $user->image ?? asset('images/placeholder.svg') }}"
                                                  alt="{{ $user->name }}" class="rounded-lg w-full h-full object-cover" />
                                         </div>
                                         <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-sm"></div>
-                                    </div>
+                                    </div> -->
                                     <div class="ml-4">
                                         <div class="text-sm font-semibold text-gray-900">{{ $user->name }}</div>
                                         <div class="text-xs text-gray-500">ID: #{{ $user->id }}</div>
@@ -115,9 +115,6 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="text-sm text-gray-700 font-medium">{{ $user->email }}</div>
-                                    <div class="ml-2 px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full border border-blue-200">
-                                        Verified
-                                    </div>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">

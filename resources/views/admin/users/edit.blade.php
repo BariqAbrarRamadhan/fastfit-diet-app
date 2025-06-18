@@ -17,13 +17,12 @@
             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-8 mb-8">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div class="flex items-center">
-                        <a href="{{ route('admin.users.show', $user->id) }}"
+                        <a href="{{ route('admin.users.index') }}"
                             class="mr-6 p-3 rounded-xl bg-white/70 border border-gray-200 text-gray-600 hover:bg-gradient-to-r hover:from-orange-50 hover:to-purple-50 hover:text-orange-600 transition-all duration-300 group">
                             <i data-lucide="arrow-left" class="w-5 h-5 group-hover:animate-pulse"></i>
                         </a>
                         <div>
-                            <h1
-                                class="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent mb-2">
+                            <h1 class="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent mb-2">
                                 Edit Pengguna
                             </h1>
                             <p class="text-gray-600 text-lg">Perbarui informasi untuk {{ $user->name }}</p>
@@ -55,7 +54,8 @@
                         </div>
                     </div>
                 </div>
-            @endif <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
+            @endif
+            <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -128,8 +128,7 @@
                     </div> <!-- Enhanced Sidebar -->
                     <div class="lg:col-span-1 space-y-8">
                         <!-- Enhanced Photo Upload Section -->
-                        <div
-                            class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
+                        <!-- <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
                             <div class="bg-gradient-to-r from-orange-50/80 to-purple-50/80 p-6 border-b border-gray-200/50">
                                 <h3
                                     class="text-xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent mb-2">
@@ -181,7 +180,7 @@
                                     </p>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Enhanced Account Information -->
                         <div

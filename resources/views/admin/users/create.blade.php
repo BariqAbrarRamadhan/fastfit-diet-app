@@ -179,8 +179,7 @@
                     </div> <!-- Enhanced Sidebar -->
                     <div class="lg:col-span-1 space-y-8">
                         <!-- Enhanced Photo Upload Section -->
-                        <div
-                            class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
+                        <!-- <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
                             <div class="bg-gradient-to-r from-orange-50/80 to-purple-50/80 p-6 border-b border-gray-200/50">
                                 <h3
                                     class="text-xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent mb-2">
@@ -217,7 +216,7 @@
                                     </p>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Enhanced Action Buttons -->
                         <div

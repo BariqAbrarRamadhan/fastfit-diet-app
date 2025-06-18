@@ -91,7 +91,7 @@
       </div>
 
       <!-- Action Buttons -->
-      <div class="p-6 bg-gray-50 border-t border-gray-200">
+      <!-- <div class="p-6 bg-gray-50 border-t border-gray-200">
       <div class="grid grid-cols-2 gap-3">
       <button
         class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center">
@@ -104,7 +104,7 @@
         Suspend
       </button>
       </div>
-      </div>
+      </div> -->
       </div>
     </div>
 
@@ -145,7 +145,7 @@
       </div>
 
       <!-- Statistics -->
-      <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <!-- <div class="bg-white rounded-lg shadow-sm border border-gray-200">
       <div class="border-b border-gray-200 p-4">
       <h3 class="text-lg font-semibold text-gray-900 flex items-center">
       <i data-lucide="bar-chart-3" class="w-5 h-5 mr-2 text-purple-500"></i>
@@ -179,10 +179,10 @@
       </div>
       </div>
       </div>
-      </div>
+      </div> -->
 
       <!-- Recent Activity -->
-      <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <!-- <div class="bg-white rounded-lg shadow-sm border border-gray-200">
       <div class="border-b border-gray-200 p-4">
       <h3 class="text-lg font-semibold text-gray-900 flex items-center">
       <i data-lucide="activity" class="w-5 h-5 mr-2 text-green-500"></i>
@@ -225,7 +225,7 @@
       </div>
       </div>
       </div>
-      </div>
+      </div> -->
     </div>
     </div>
     </div>
