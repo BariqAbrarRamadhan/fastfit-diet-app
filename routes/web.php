@@ -14,6 +14,20 @@ use App\Http\Controllers\QuestionnaireController;
 use App\Http\Controllers\UserGuideController;
 use Illuminate\Support\Facades\Route;
 
+// Test route untuk Google OAuth (hapus di production)
+if (app()->environment('local')) {
+    Route::get('/test-google', function () {
+        $config = config('services.google');
+        
+        return response()->json([
+            'client_id' => $config['client_id'] ?? 'NOT SET',
+            'client_secret' => $config['client_secret'] ? 'SET (Hidden)' : 'NOT SET', 
+            'redirect' => $config['redirect'] ?? 'NOT SET',
+            'app_url' => config('app.url'),
+        ]);
+    });
+}
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +44,10 @@ Route::middleware('guest')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/login', [AuthController::class, 'indexLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+    
+    // Google OAuth routes
+    Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
+    Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('auth.google.callback');
     Route::get('/register', [AuthController::class, 'indexRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 });
