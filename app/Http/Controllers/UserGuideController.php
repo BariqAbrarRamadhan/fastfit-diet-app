@@ -65,7 +65,7 @@ class UserGuideController extends Controller
                     'Tandai makanan yang sudah dikonsumsi sesuai rekomendasi',
                     'Tambahkan asupan air minum sepanjang hari',
                     'Log aktivitas olahraga dengan durasi dan intensitas',
-                    'Gunakan navigasi hari untuk melihat progress minggu lalu'
+                    'Gunakan navigasi hari untuk melihat progress di rentang tujuh hari',
                 ]
             ],
             [

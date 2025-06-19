@@ -110,14 +110,14 @@ class AuthController extends Controller
     {
         try {
             $googleUser = Socialite::driver('google')->user();
-            
+
             // Cek apakah user sudah ada berdasarkan google_id
             $user = User::where('google_id', $googleUser->id)->first();
-            
+
             if (!$user) {
                 // Cek apakah email sudah terdaftar
                 $existingUser = User::where('email', $googleUser->email)->first();
-                
+
                 if ($existingUser) {
                     // Update user yang sudah ada dengan google_id
                     $existingUser->update(['google_id' => $googleUser->id]);
@@ -133,12 +133,12 @@ class AuthController extends Controller
                     ]);
                 }
             }
-            
+
             // Login user
             Auth::login($user);
-            
+
             $hasCompletedQuestionnaire = $user->questionnaire()->exists();
-            
+
             // Redirect berdasarkan status kuesioner dan role
             if ($user->role == 'admin') {
                 return redirect()->route('admin.dashboard')->with('success', 'Login dengan Google berhasil! Selamat datang di dashboard admin!');
@@ -147,7 +147,7 @@ class AuthController extends Controller
             } else {
                 return redirect()->route('questionnaire.index')->with('info', 'Login dengan Google berhasil! Silakan lengkapi kuesioner terlebih dahulu.');
             }
-            
+
         } catch (\Exception $e) {
             return redirect()->route('login')->with('error', 'Terjadi kesalahan saat login dengan Google. Silakan coba lagi.');
         }
