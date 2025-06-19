@@ -99,7 +99,7 @@ class DashboardController extends Controller
                     'id' => $article->id,
                     'title' => $article->title,
                     'excerpt' => $article->excerpt,
-                    'image' => $article->image ? asset('storage/' . $article->image) : '/placeholder.svg?height=200&width=300',
+                    'image' => $article->image ? asset($article->image) : '/placeholder.svg?height=200&width=300',
                     'category' => $article->category,
                     'readTime' => $article->read_time ? $article->read_time . ' menit' : '5 menit',
                     'slug' => $article->slug ?? null,

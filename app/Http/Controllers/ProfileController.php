@@ -75,7 +75,7 @@ class ProfileController extends Controller
                 ->sum('calories_burned');
             $exerciseHistory[] = ['date' => $date, 'duration' => $duration, 'calories' => $calories];
         }// Apply date filter for progress tab
-        $filterDays = $request->query('filter', 7);
+        $filterDays = (int) $request->query('filter', 7);
         if (!in_array($filterDays, [7, 14, 30, 90])) {
             $filterDays = 7;
         }
